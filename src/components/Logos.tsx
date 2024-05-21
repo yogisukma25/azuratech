@@ -1,4 +1,5 @@
 import { Container } from "@/components/Container";
+import Image from "next/image";
 
 export function Logos() {
   return (
@@ -11,6 +12,8 @@ export function Logos() {
 
         <div className="flex flex-wrap justify-center gap-5 mt-10 md:justify-around">
           <div className="pt-2 text-gray-400 dark:text-gray-400">
+                      <Image  src="img/brands/amazon.svg" alt="Amazon" width={110} height={33} />
+
             <AmazonLogo />
           </div>
           <div className="text-gray-400 dark:text-gray-400">
