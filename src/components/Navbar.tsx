@@ -1,4 +1,4 @@
-\import Link from "next/link";
+import Link from "next/link";
 import ThemeChanger from "./DarkSwitch";
 import { DisclosureClient } from "@/components/DisclosureClient";
 
@@ -18,7 +18,7 @@ async function loader() {
         text: 'Nextly',
         image: {
           id: 1,
-          url: '/uploads/logo_53a916f10c.svg',
+          url: '/img/logo.svg',
           alternativeText: null,
           name: 'logo.svg'
         }
