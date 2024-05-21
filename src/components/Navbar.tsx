@@ -16,6 +16,7 @@ async function loader() {
       logoLink: {
         id: 1,
         text: 'Nextly',
+        href: '/',
         image: {
           id: 1,
           url: '/img/logo.svg',
@@ -56,6 +57,7 @@ interface NavbarData {
     logoLink: {
       id: number;
       text: string;
+      href: string;
       image: {
         id: number;
         url: string;
