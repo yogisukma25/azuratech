@@ -13,9 +13,8 @@ export default function Home() {
   return (
     <Container>
       <Hero data={heroData} />
-      <Logos />
       <SectionHeading data={sectionHeading} />
-      <Benefits />
+      <Benefits data={benefitsData} />
       <SectionHeading data={sectionHeading} />
       <ContentWithImage />
       <SectionHeading data={sectionHeading} />
@@ -54,4 +53,38 @@ const sectionHeading = {
   preHeading: "Section Pre Heading",
   heading: "Section Heading",
   text: "Section Text Description",
+};
+
+const benefitsData = {
+  id: 1,
+  __component: "layout.content-items",
+  heading: "Why Choose Us?",
+  text: "We are a team of experienced professionals who are passionate about what we do. We are committed to providing high-quality services to our clients. Here are some reasons why you should choose us.",
+  imageRight: null,
+  image: {
+    id: 3,
+    url: "/img/benefit-one.png",
+    alternativeText: null,
+    name: "benefit-one.png",
+  },
+  item: [
+    {
+      id: 1,
+      text: "We are committed to providing high-quality services to our clients.",
+      heading: "Quality Service",
+      icon: "CHECK",
+    },
+    {
+      id: 2,
+      text: "We are a team of experienced professionals who are passionate about what we do.",
+      heading: "Experienced Professionals",
+      icon: "CHECK",
+    },
+    {
+      id: 3,
+      text: "We are committed to providing high-quality services to our clients.",
+      heading: "Customer Satisfaction",
+      icon: "CHECK",
+    },
+  ],
 };
