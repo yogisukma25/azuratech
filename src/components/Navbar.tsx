@@ -1,21 +1,97 @@
+import qs from "qs";
 import Link from "next/link";
 import ThemeChanger from "./DarkSwitch";
 import { DisclosureClient } from "@/components/DisclosureClient";
 
-export function Navbar() {
-  const navigation = [
-    { text: "Features", href: "/features", external: false },
-    { text: "Pricing", href: "/pricing", external: false },
-    { text: "Company", href: "/company", external: false },
-    { text: "Blog", href: "/blog", external: false },
-  ];
+async function loader() {
+
+  const data = {
+    id: 1,
+    title: 'Global Setting Page',
+    description: 'Responsible for global website settings.',
+    createdAt: '2024-05-20T16:59:58.446Z',
+    updatedAt: '2024-05-21T05:03:11.112Z',
+    publishedAt: '2024-05-20T16:59:59.488Z',
+    topnav: {
+      id: 1,
+      logoLink: {
+        id: 1,
+        text: 'Nextly',
+        image: {
+          id: 1,
+          url: '/uploads/logo_53a916f10c.svg',
+          alternativeText: null,
+          name: 'logo.svg'
+        }
+      },
+      link: [
+        { id: 1, href: '/', text: 'Home', external: false },
+        { id: 3, href: '/features', text: 'Features', external: false },
+        { id: 4, href: '/pricing', text: 'Pricing', external: false },
+        { id: 5, href: '/company', text: 'Company', external: false },
+        { id: 2, href: '/blog', text: 'Blog', external: false }
+      ],
+      cta: {
+        id: 6,
+        href: 'https://strapi.io',
+        text: 'Get Started',
+        external: true
+      }
+    },
+    meta: {}
+  }
+  
+  
+  return data;
+}
+
+interface NavbarData {
+  id: number;
+  title: string;
+  description: string;
+  createdAt: string;
+  updatedAt: string;
+  publishedAt: string;
+  topnav: {
+    id: number;
+    logoLink: {
+      id: number;
+      text: string;
+      image: {
+        id: number;
+        url: string;
+        alternativeText: string | null;
+        name: string;
+      };
+    };
+    link: {
+      id: number;
+      href: string;
+      text: string;
+      external: boolean;
+    }[];
+    cta: {
+      id: number;
+      href: string;
+      text: string;
+      external: boolean;
+    };
+  };
+  meta: Record<string, any>;
+
+}
+
+export async function Navbar() {
+  const data = await loader() as NavbarData;
+  const navigation = data.topnav.link;
+  const cta = data.topnav.cta;
 
   return (
     <div className="w-full">
       <nav className="container relative flex flex-wrap items-center justify-between p-8 mx-auto lg:justify-between xl:px-0">
         {/* Logo  */}
 
-        <DisclosureClient navigation={navigation} />
+        <DisclosureClient topnav={data.topnav} />
 
         {/* menu  */}
         <div className="hidden text-center lg:flex lg:items-center">
@@ -35,10 +111,11 @@ export function Navbar() {
 
         <div className="hidden mr-3 space-x-4 lg:flex nav__item">
           <Link
-            href="/"
+            href={cta.href}
             className="px-6 py-2 text-white bg-indigo-600 rounded-md md:ml-5"
+            target={cta.external ? "_blank" : "_self"}
           >
-            Get Started
+            {cta.text}
           </Link>
           <ThemeChanger />
         </div>
@@ -46,3 +123,5 @@ export function Navbar() {
     </div>
   );
 }
+
+

@@ -5,8 +5,9 @@ import {
   DisclosurePanel,
   DisclosureButton,
 } from "@headlessui/react";
+
 import Link from "next/link";
-import Image from "next/image";
+import { StrapiImage } from "@/components/StrapiImage";
 
 interface LinkProps {
   text: string;
@@ -15,10 +16,25 @@ interface LinkProps {
 }
 
 interface DisclosureClientProps {
-  navigation: LinkProps[];
+  topnav: {
+    logoLink: {
+      text: string;
+      image: {
+        url: string;
+        alternativeText: string | null;
+        name: string;
+      };
+    };
+    link: LinkProps[];
+    cta: LinkProps;
+  };
 }
 
 export function DisclosureClient(props: Readonly<DisclosureClientProps>) {
+  const navigation = props.topnav.link;
+  const logo = props.topnav.logoLink;
+  const cta = props.topnav.cta;
+
   return (
     <Disclosure>
       {({ open }) => (
@@ -26,15 +42,15 @@ export function DisclosureClient(props: Readonly<DisclosureClientProps>) {
           <Link href="/">
             <span className="flex items-center space-x-2 text-2xl font-medium text-indigo-500 dark:text-gray-100">
               <span>
-                <Image
-                  src="/img/logo.svg"
-                  alt="N"
-                  width="32"
-                  height="32"
+                <StrapiImage
+                  src={logo.image.url}
+                  alt={logo.image.alternativeText || logo.image.name}
+                  width={32}
+                  height={32}
                   className="w-8"
                 />
               </span>
-              <span>Nextly</span>
+              <span>{logo.text}</span>
             </span>
           </Link>
 
@@ -65,7 +81,7 @@ export function DisclosureClient(props: Readonly<DisclosureClientProps>) {
 
           <DisclosurePanel className="flex flex-wrap w-full my-5 lg:hidden">
             <>
-              {props.navigation.map((item, index) => (
+              {navigation.map((item, index) => (
                 <Link
                   key={index}
                   href={item.href}
@@ -75,10 +91,11 @@ export function DisclosureClient(props: Readonly<DisclosureClientProps>) {
                 </Link>
               ))}
               <Link
-                href="/"
+                href={cta.href}
+                target={cta.external ? "_blank" : "_self"}
                 className="w-full px-6 py-2 mt-3 text-center text-white bg-indigo-600 rounded-md lg:ml-5"
               >
-                Get Started
+                {cta.text}
               </Link>
             </>
           </DisclosurePanel>
