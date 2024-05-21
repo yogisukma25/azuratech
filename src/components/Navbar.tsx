@@ -1,5 +1,4 @@
-import qs from "qs";
-import Link from "next/link";
+\import Link from "next/link";
 import ThemeChanger from "./DarkSwitch";
 import { DisclosureClient } from "@/components/DisclosureClient";
 
