@@ -2,7 +2,15 @@
 import { useState } from "react";
 import { Container } from "@/components/Container";
 
-export function Video() {
+interface VideoProps {
+  data: {
+    id: number;
+    videoId: string;
+  };
+}
+
+export function Video({ data }: Readonly<VideoProps>) {
+  const { videoId } = data;
   const [playVideo, setPlayVideo] = useState(false);
   return (
     <Container>
@@ -10,7 +18,6 @@ export function Video() {
         {!playVideo && (
           <button
             onClick={() => setPlayVideo(!playVideo)}
-            
             className="absolute inset-auto w-16 h-16 text-white transform -translate-x-1/2 -translate-y-1/2 lg:w-28 lg:h-28 top-1/2 left-1/2"
           >
             <svg
@@ -30,7 +37,7 @@ export function Video() {
         )}
         {playVideo && (
           <iframe
-            src="https://www.youtube-nocookie.com/embed/fZ0D0cnR88E?controls=0&autoplay=1"
+            src={`https://www.youtube-nocookie.com/embed/${videoId}?controls=0&autoplay=1`}
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             className="w-full h-full aspect-video"

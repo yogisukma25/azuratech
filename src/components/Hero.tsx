@@ -13,7 +13,7 @@ interface HeroProps {
     };
     image: {
       url: string;
-      alternativeText: string;
+      alternativeText: string | null;
       name: string;
     };
   };

@@ -15,11 +15,11 @@ export default function Home() {
       <Hero data={heroData} />
       <SectionHeading data={sectionHeading} />
       <Benefits data={benefitsData} />
-      <ContentWithImage data={contentWithImage}/>
+      <ContentWithImage data={contentWithImage} />
       <SectionHeading data={sectionHeading} />
-      <Video />
+      <Video data={videoData} />
       <SectionHeading data={sectionHeading} />
-      <Testimonials />
+      <Testimonials data={testimonialsData} />
       <SectionHeading data={sectionHeading} />
       <Faq />
       <Cta />
@@ -88,7 +88,6 @@ const benefitsData = {
   ],
 };
 
-
 const contentWithImage = {
   id: 1,
   __component: "layout.content-image",
@@ -101,4 +100,52 @@ const contentWithImage = {
     alternativeText: null,
     name: "benefit-two.png",
   },
+};
+
+const videoData = {
+  id: 1,
+  videoId: "fZ0D0cnR88E",
+};
+
+const testimonialsData = {
+  id: 1,
+  __component: "layout.card-quote",
+  card: [
+    {
+      id: 1,
+      text: "Share a real testimonial that hits some of your benefits from one of your popular customer.",
+      heading: "Jane Steiner",
+      subHeading: "VP Sales at Google",
+      image: {
+        id: 7,
+        url: "/img/user1.jpg",
+        alternativeText: null,
+        name: "user1.jpg",
+      },
+    },
+    {
+      id: 2,
+      text: "Make sure you only pick the right sentence to keep it short and simple.",
+      heading: "Dylan Ambrose",
+      subHeading: "Lead marketer at Netflix",
+      image: {
+        id: 8,
+        url: "/img/user2.jpg",
+        alternativeText: null,
+        name: "user2.jpg",
+      },
+    },
+    {
+      id: 3,
+      text: "This is an awesome landing page template I've seen. I would use this for anything.",
+      heading: "Gabrielle Winston",
+      subHeading: "Co-founder of Acme Inc",
+      image: {
+        id: 6,
+        url: "/img/user3.jpg",
+        alternativeText: null,
+        name: "user3.jpg",
+      },
+    },
+  ],
 };
