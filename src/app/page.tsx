@@ -42,7 +42,7 @@ const heroData = {
   },
   image: {
     id: 2,
-    url: "/uploads/hero_7c73624e4f.png",
+    url: "/img/hero.png",
     alternativeText: "hero image",
     name: "hero.png",
   },
