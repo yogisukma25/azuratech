@@ -10,8 +10,11 @@ interface VideoProps {
 }
 
 export function Video({ data }: Readonly<VideoProps>) {
-  const { videoId } = data;
   const [playVideo, setPlayVideo] = useState(false);
+
+  if (!data) return null;
+  const { videoId } = data;
+  
   return (
     <Container>
       <div className="relative w-full h-[500px] max-w-4xl mx-auto overflow-hidden lg:mb-20 rounded-2xl bg-pink-500">

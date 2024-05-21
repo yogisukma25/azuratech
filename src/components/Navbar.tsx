@@ -83,6 +83,7 @@ interface NavbarData {
 
 export async function Navbar() {
   const data = await loader() as NavbarData;
+  if (!data) return null;
   const navigation = data.topnav.link;
   const cta = data.topnav.cta;
 

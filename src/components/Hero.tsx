@@ -20,6 +20,7 @@ interface HeroProps {
 }
 
 export function Hero({ data }: Readonly<HeroProps>) {
+  if (!data) return null;
   const { heading, text, cta, image } = data;
   return (
     <Container className="flex flex-wrap ">

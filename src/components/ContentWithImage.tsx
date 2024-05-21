@@ -19,6 +19,7 @@ interface ContentWithImageProps {
 }
 
 export function ContentWithImage({ data }: Readonly<ContentWithImageProps>) {
+  if (!data) return null;
   const { heading, text, image, imageRight } = data;
   return (
     <Container className="flex flex-wrap mb-20 lg:gap-10 lg:flex-nowrap ">

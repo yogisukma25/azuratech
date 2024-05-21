@@ -11,6 +11,7 @@ interface SectionHeadingProps {
 }
 
 export function SectionHeading({ data }: Readonly<SectionHeadingProps>) {
+  if (!data) return null;
   const { preHeading, heading, text } = data;
 
   return (

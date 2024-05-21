@@ -96,6 +96,7 @@ interface BenefitItemProps {
 }
 
 function Benefit({ data }: Readonly<BenefitItemProps>) {
+  if (!data) return null;
   const { heading, text, icon } = data;
   return (
     <div className="flex items-start mt-8 space-x-3">

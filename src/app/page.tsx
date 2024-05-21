@@ -21,8 +21,8 @@ export default function Home() {
       <SectionHeading data={sectionHeading} />
       <Testimonials data={testimonialsData} />
       <SectionHeading data={sectionHeading} />
-      <Faq />
-      <Cta />
+      <Faq data={faqsData} />
+      <Cta data={ctaData} />
     </Container>
   );
 }
@@ -148,4 +148,52 @@ const testimonialsData = {
       },
     },
   ],
+};
+
+const faqsData = {
+  id: 1,
+  __component: "layout.fa-qs",
+  questions: {
+    data: [
+      {
+        id: 1,
+        question: "Is this template free to use?",
+        answer: "Yes, this template is completely free to use.",
+        createdAt: "2024-05-21T18:57:03.385Z",
+        updatedAt: "2024-05-21T18:57:03.931Z",
+        publishedAt: "2024-05-21T18:57:03.929Z",
+      },
+      {
+        id: 2,
+        question: "Can I use this in a commercial project?",
+        answer: "Yes, this you can.",
+        createdAt: "2024-05-21T18:57:42.594Z",
+        updatedAt: "2024-05-21T18:57:43.231Z",
+        publishedAt: "2024-05-21T18:57:43.231Z",
+      },
+      {
+        id: 3,
+        question: "What is your refund policy?",
+        answer:
+          "There is none, since this is completely free project for you to use.",
+        createdAt: "2024-05-21T18:58:44.653Z",
+        updatedAt: "2024-05-21T18:58:45.206Z",
+        publishedAt: "2024-05-21T18:58:45.206Z",
+      },
+    ],
+  },
+};
+
+const ctaData = {
+  id: 1,
+  __component: "layout.cta",
+  heading: "Want an easy way to deploy your Strapi backend?",
+  subHeading:
+    "See how Strapi Cloud can help you.  Get CDN, database, email, and file storage all included.",
+  cta: {
+    id: 8,
+    href: "https://strapi.io/cloud",
+    text: "Try Strapi Cloud",
+    external: true,
+  },
 };
