@@ -12,17 +12,17 @@ import { Cta } from "@/components/Cta";
 export default function Home() {
   return (
     <Container>
-      <Hero data={heroData}/>
+      <Hero data={heroData} />
       <Logos />
-      <SectionHeading />
+      <SectionHeading data={sectionHeading} />
       <Benefits />
-      <SectionHeading />
+      <SectionHeading data={sectionHeading} />
       <ContentWithImage />
-      <SectionHeading />
+      <SectionHeading data={sectionHeading} />
       <Video />
-      <SectionHeading />
+      <SectionHeading data={sectionHeading} />
       <Testimonials />
-      <SectionHeading />
+      <SectionHeading data={sectionHeading} />
       <Faq />
       <Cta />
     </Container>
@@ -46,4 +46,12 @@ const heroData = {
     alternativeText: "hero image",
     name: "hero.png",
   },
+};
+
+const sectionHeading = {
+  id: 1,
+  __component: "layout.section-heading",
+  preHeading: "Section Pre Heading",
+  heading: "Section Heading",
+  text: "Section Text Description",
 };
