@@ -15,8 +15,7 @@ export default function Home() {
       <Hero data={heroData} />
       <SectionHeading data={sectionHeading} />
       <Benefits data={benefitsData} />
-      <SectionHeading data={sectionHeading} />
-      <ContentWithImage />
+      <ContentWithImage data={contentWithImage}/>
       <SectionHeading data={sectionHeading} />
       <Video />
       <SectionHeading data={sectionHeading} />
@@ -87,4 +86,19 @@ const benefitsData = {
       icon: "CHECK",
     },
   ],
+};
+
+
+const contentWithImage = {
+  id: 1,
+  __component: "layout.content-image",
+  heading: "Why Choose Us?",
+  text: "We are a team of experienced professionals who are passionate about what we do. We are committed to providing high-quality services to our clients. Here are some reasons why you should choose us.",
+  imageRight: true,
+  image: {
+    id: 4,
+    url: "/img/benefit-two.png",
+    alternativeText: null,
+    name: "benefit-two.png",
+  },
 };
