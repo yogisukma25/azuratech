@@ -9,12 +9,10 @@ import { Testimonials } from "@/components/Testimonials";
 import { Faq } from "@/components/Faq";
 import { Cta } from "@/components/Cta";
 
-
-
 export default function Home() {
   return (
     <Container>
-      <Hero />
+      <Hero data={heroData}/>
       <Logos />
       <SectionHeading />
       <Benefits />
@@ -30,3 +28,22 @@ export default function Home() {
     </Container>
   );
 }
+
+const heroData = {
+  id: 1,
+  __component: "layout.hero",
+  heading: "Free Landing Page Template for startups",
+  text: "Nextly is a free landing page & marketing website template for startups and indie projects. Its built with Next.js & TailwindCSS. And its completely open-source.",
+  cta: {
+    id: 7,
+    href: "https://github.com/PaulBratslavsky/next-strapi-template-starter-code",
+    text: "Starter Code",
+    external: true,
+  },
+  image: {
+    id: 2,
+    url: "/uploads/hero_7c73624e4f.png",
+    alternativeText: "hero image",
+    name: "hero.png",
+  },
+};
