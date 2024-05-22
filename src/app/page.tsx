@@ -1,6 +1,5 @@
 import { Container } from "@/components/Container";
 import { Hero } from "@/components/Hero";
-import { Logos } from "@/components/Logos";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Benefits } from "@/components/Benefits";
 import { ContentWithImage } from "@/components/ContentWithImage";
