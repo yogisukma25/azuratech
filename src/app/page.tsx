@@ -1,113 +1,198 @@
-import Image from "next/image";
+import { Container } from "@/components/Container";
+import { Hero } from "@/components/Hero";
+import { SectionHeading } from "@/components/SectionHeading";
+import { Benefits } from "@/components/Benefits";
+import { ContentWithImage } from "@/components/ContentWithImage";
+import { Video } from "@/components/Video";
+import { Testimonials } from "@/components/Testimonials";
+import { Faq } from "@/components/Faq";
+import { Cta } from "@/components/Cta";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    <Container>
+      <Hero data={heroData} />
+      <SectionHeading data={sectionHeading} />
+      <Benefits data={benefitsData} />
+      <ContentWithImage data={contentWithImage} />
+      <SectionHeading data={sectionHeading} />
+      <Video data={videoData} />
+      <SectionHeading data={sectionHeading} />
+      <Testimonials data={testimonialsData} />
+      <SectionHeading data={sectionHeading} />
+      <Faq data={faqsData} />
+      <Cta data={ctaData} />
+    </Container>
   );
 }
+
+const heroData = {
+  id: 1,
+  __component: "layout.hero",
+  heading: "Free Landing Page Template for startups",
+  text: "Nextly is a free landing page & marketing website template for startups and indie projects. Its built with Next.js & TailwindCSS. And its completely open-source.",
+  cta: {
+    id: 7,
+    href: "https://github.com/PaulBratslavsky/next-strapi-template-starter-code",
+    text: "Starter Code",
+    external: true,
+  },
+  image: {
+    id: 2,
+    url: "/img/hero.png",
+    alternativeText: "hero image",
+    name: "hero.png",
+  },
+};
+
+const sectionHeading = {
+  id: 1,
+  __component: "layout.section-heading",
+  preHeading: "Section Pre Heading",
+  heading: "Section Heading",
+  text: "Section Text Description",
+};
+
+const benefitsData = {
+  id: 1,
+  __component: "layout.content-items",
+  heading: "Why Choose Us?",
+  text: "We are a team of experienced professionals who are passionate about what we do. We are committed to providing high-quality services to our clients. Here are some reasons why you should choose us.",
+  imageRight: null,
+  image: {
+    id: 3,
+    url: "/img/benefit-one.png",
+    alternativeText: null,
+    name: "benefit-one.png",
+  },
+  item: [
+    {
+      id: 1,
+      text: "We are committed to providing high-quality services to our clients.",
+      heading: "Quality Service",
+      icon: "CHECK",
+    },
+    {
+      id: 2,
+      text: "We are a team of experienced professionals who are passionate about what we do.",
+      heading: "Experienced Professionals",
+      icon: "CHECK",
+    },
+    {
+      id: 3,
+      text: "We are committed to providing high-quality services to our clients.",
+      heading: "Customer Satisfaction",
+      icon: "CHECK",
+    },
+  ],
+};
+
+const contentWithImage = {
+  id: 1,
+  __component: "layout.content-image",
+  heading: "Why Choose Us?",
+  text: "We are a team of experienced professionals who are passionate about what we do. We are committed to providing high-quality services to our clients. Here are some reasons why you should choose us.",
+  imageRight: true,
+  image: {
+    id: 4,
+    url: "/img/benefit-two.png",
+    alternativeText: null,
+    name: "benefit-two.png",
+  },
+};
+
+const videoData = {
+  id: 1,
+  videoId: "fZ0D0cnR88E",
+};
+
+const testimonialsData = {
+  id: 1,
+  __component: "layout.card-quote",
+  card: [
+    {
+      id: 1,
+      text: "Share a real testimonial that hits some of your benefits from one of your popular customer.",
+      heading: "Jane Steiner",
+      subHeading: "VP Sales at Google",
+      image: {
+        id: 7,
+        url: "/img/user1.jpg",
+        alternativeText: null,
+        name: "user1.jpg",
+      },
+    },
+    {
+      id: 2,
+      text: "Make sure you only pick the right sentence to keep it short and simple.",
+      heading: "Dylan Ambrose",
+      subHeading: "Lead marketer at Netflix",
+      image: {
+        id: 8,
+        url: "/img/user2.jpg",
+        alternativeText: null,
+        name: "user2.jpg",
+      },
+    },
+    {
+      id: 3,
+      text: "This is an awesome landing page template I've seen. I would use this for anything.",
+      heading: "Gabrielle Winston",
+      subHeading: "Co-founder of Acme Inc",
+      image: {
+        id: 6,
+        url: "/img/user3.jpg",
+        alternativeText: null,
+        name: "user3.jpg",
+      },
+    },
+  ],
+};
+
+const faqsData = {
+  id: 1,
+  __component: "layout.fa-qs",
+  questions: {
+    data: [
+      {
+        id: 1,
+        question: "Is this template free to use?",
+        answer: "Yes, this template is completely free to use.",
+        createdAt: "2024-05-21T18:57:03.385Z",
+        updatedAt: "2024-05-21T18:57:03.931Z",
+        publishedAt: "2024-05-21T18:57:03.929Z",
+      },
+      {
+        id: 2,
+        question: "Can I use this in a commercial project?",
+        answer: "Yes, this you can.",
+        createdAt: "2024-05-21T18:57:42.594Z",
+        updatedAt: "2024-05-21T18:57:43.231Z",
+        publishedAt: "2024-05-21T18:57:43.231Z",
+      },
+      {
+        id: 3,
+        question: "What is your refund policy?",
+        answer:
+          "There is none, since this is completely free project for you to use.",
+        createdAt: "2024-05-21T18:58:44.653Z",
+        updatedAt: "2024-05-21T18:58:45.206Z",
+        publishedAt: "2024-05-21T18:58:45.206Z",
+      },
+    ],
+  },
+};
+
+const ctaData = {
+  id: 1,
+  __component: "layout.cta",
+  heading: "Want an easy way to deploy your Strapi backend?",
+  subHeading:
+    "See how Strapi Cloud can help you.  Get CDN, database, email, and file storage all included.",
+  cta: {
+    id: 8,
+    href: "https://strapi.io/cloud",
+    text: "Try Strapi Cloud",
+    external: true,
+  },
+};

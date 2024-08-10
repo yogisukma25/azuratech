@@ -1,5 +1,21 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## Note: READ FIRST
+
+This template is based on the template by *web3templates* you can find the main repo [here](https://github.com/web3templates/nextly-template/).
+
+I just update it the template to use `typescript` and `app` folder in Next.js 14. 
+
+I wanted a simple starter template that I can use to show case how easy you can add a backend with [Strapi](https://strapi.io).
+
+This is the starter code I will be using in my project, feel free to use it as you please, but the credit goes to the team at *web3templates*.  
+
+Find the original template [here](https://github.com/web3templates/nextly-template/).
+
+Once I finish the Strapi integration, I will add the link to the completed project here.
+
+Original README.md is found below.
+
 ## Getting Started
 
 First, run the development server:
@@ -34,3 +50,4 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+# next-strapi-template-starter-code
